@@ -20,6 +20,8 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         print("The value is: " + Input.GetAxisRaw("Horizontal"));
+
+        RotatePlayer();
     }
 
     private void FixedUpdate()
@@ -33,5 +35,17 @@ public class PlayerMovement : MonoBehaviour
             Input.GetAxisRaw("Horizontal") * (-walk_Speed),
             myBody.velocity.y, 
             Input.GetAxisRaw("Vertical") * (-z_Speed));
+    }
+
+    void RotatePlayer()
+    {
+        if(Input.GetAxisRaw("Horizontal") > 0)
+        {
+            transform.rotation = Quaternion.Euler(0f, rotation_Y, 0f);
+
+        } else if(Input.GetAxisRaw("Horizontal") < 0)
+        {
+            transform.rotation = Quaternion.Euler(0f, Mathf.Abs(rotation_Y), 0f);
+        }
     }
 }
