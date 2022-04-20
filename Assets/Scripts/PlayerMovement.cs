@@ -19,7 +19,7 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-        print("The value is: " + Input.GetAxisRaw("Horizontal"));
+       // print("The value is: " + Input.GetAxisRaw("Horizontal"));
 
         RotatePlayer();
     }
