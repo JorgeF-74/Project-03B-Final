@@ -21,9 +21,8 @@ public class PlayerGrabMechanic : MonoBehaviour
         
     }
 
-    void OnTriggerEnter(Collider other)
+    void OnTriggerEnter(Collider enemy)
     {
-        if (enemy)
         GrabbingEnemy();
     }
 
