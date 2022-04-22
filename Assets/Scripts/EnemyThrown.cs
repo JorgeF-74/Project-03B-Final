@@ -9,22 +9,36 @@ public class EnemyThrown : MonoBehaviour
     bool E_isGrabbed = false;
     bool E_isThrown = false;
 
-    GameObject player;
+    public GameObject player;
 
+    public GameObject EnemyBody_Idle;
+    public GameObject EnemyBody_Grabbed;
+
+    PlayerGrabMechanic playerFunction;
 
     private void Start()
     {
-        
+        playerFunction = player.GetComponent<PlayerGrabMechanic>();
+
     }
-    void FixedUpdate()
+    void Update()
     {
-        //IsGettingThrown();
+       
+        if(playerFunction.P_isGrabbing == true)
+        {
+            IsGettingGrabbed();
+        }
+
+
     }
 
    
-    void IsGettingGrabbed()
+    private void IsGettingGrabbed()
     {
         Debug.Log("Enemy is Grabbed");
+
+        EnemyBody_Idle.SetActive(false);
+        EnemyBody_Grabbed.SetActive(true);
     }
 
     void IsGettingThrown()

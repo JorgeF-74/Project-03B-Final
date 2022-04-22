@@ -5,10 +5,13 @@ using UnityEngine;
 public class PlayerGrabMechanic : MonoBehaviour
 {
 
-    bool P_isGrabbing = false;
-    bool P_isThrowing = false;
+    public bool P_isGrabbing = false;
+    public bool P_isThrowing = false;
 
     GameObject enemy;
+
+    public GameObject PlayerBody_Idle;
+    public GameObject PlayerBody_Grabbing;
 
     void Start()
     {
@@ -21,14 +24,18 @@ public class PlayerGrabMechanic : MonoBehaviour
         
     }
 
-    void OnTriggerEnter(Collider enemy)
+    void OnTriggerEnter(Collider other)
     {
+        if (other.CompareTag("Enemy"))
         GrabbingEnemy();
     }
 
     void GrabbingEnemy()
     {
+        P_isGrabbing = true;
         Debug.Log("Enemy has been grabbed!");
+        PlayerBody_Idle.SetActive(false);
+        PlayerBody_Grabbing.SetActive(true);
     }
 
 }
