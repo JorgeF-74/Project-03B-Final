@@ -9,12 +9,6 @@ public class EnemyThrown : MonoBehaviour
     bool E_isGrabbed = false;
     bool E_isThrown = false;
 
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-    public GameObject player;
-
->>>>>>> main
     public GameObject EnemyBody_Idle;
     public GameObject EnemyBody_Grabbed;
 
@@ -38,28 +32,6 @@ public class EnemyThrown : MonoBehaviour
 
         EnemyBody_Idle.SetActive(false);
         EnemyBody_Grabbed.SetActive(true);
-<<<<<<< HEAD
-=======
-=======
-    GameObject player;
-
-
-    private void Start()
-    {
-        
-    }
-    void FixedUpdate()
-    {
-        //IsGettingThrown();
-    }
-
-   
-    void IsGettingGrabbed()
-    {
-        Debug.Log("Enemy is Grabbed");
->>>>>>> main
-    }
->>>>>>> main
 
         GameObject player;
 
@@ -73,12 +45,6 @@ public class EnemyThrown : MonoBehaviour
             //IsGettingThrown();
         }
 
-
-        void IsGettingGrabbed()
-        {
-            Debug.Log("Enemy is Grabbed");
-
-        }
 
         void IsGettingThrown()
         {
