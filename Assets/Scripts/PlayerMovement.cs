@@ -11,9 +11,6 @@ public class PlayerMovement : MonoBehaviour
 
     private float rotation_Y = -90f;
     private float rotation_Speed = 15f;
-
-   
-
     void Awake()
     {
         myBody = GetComponent<Rigidbody>();

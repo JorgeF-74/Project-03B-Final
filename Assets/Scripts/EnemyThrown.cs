@@ -9,63 +9,76 @@ public class EnemyThrown : MonoBehaviour
     bool E_isGrabbed = false;
     bool E_isThrown = false;
 
-    public GameObject player;
-
     public GameObject EnemyBody_Idle;
     public GameObject EnemyBody_Grabbed;
 
-    PlayerGrabMechanic playerFunction;
+    public GameObject player;
+
 
     private void Start()
     {
-        playerFunction = player.GetComponent<PlayerGrabMechanic>();
 
     }
-    void Update()
+    void FixedUpdate()
     {
-       
-        if(playerFunction.P_isGrabbing == true)
-        {
-            IsGettingGrabbed();
-        }
-
-
+        //IsGettingThrown();
     }
 
-   
-    private void IsGettingGrabbed()
+
+    void IsGettingGrabbed()
     {
         Debug.Log("Enemy is Grabbed");
 
+
         EnemyBody_Idle.SetActive(false);
         EnemyBody_Grabbed.SetActive(true);
-    }
 
-    void IsGettingThrown()
-    {
-        Debug.Log("Enemy is Thrown");
+        GameObject player;
 
-        /*
-        
-        transform.Rotate(new Vector3(E_rotation, 0.0f, 0.0f));
 
-        if (transform.rotation.eulerAngles.z > 230)
+         void Start()
         {
-            transform.Rotate(0, 0, 0);
+
+        }
+        void FixedUpdate()
+        {
+            //IsGettingThrown();
         }
 
-        */
 
-        
-    }
+        void IsGettingGrabbed()
+        {
+            Debug.Log("Enemy is Grabbed");
 
-    void ThrownToGround()
-    {
+        }
 
-    }
+        void IsGettingThrown()
+        {
+            Debug.Log("Enemy is Thrown");
 
-    void GettingUp() 
-    {
+            /*
 
+            transform.Rotate(new Vector3(E_rotation, 0.0f, 0.0f));
+
+            if (transform.rotation.eulerAngles.z > 230)
+            {
+                transform.Rotate(0, 0, 0);
+            }
+
+            */
+
+
+        }
+
+        void ThrownToGround()
+        {
+
+        }
+
+        void GettingUp()
+        {
+
+        }
     }
 }
+
