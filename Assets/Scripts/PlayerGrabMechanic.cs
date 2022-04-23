@@ -14,6 +14,7 @@ public class PlayerGrabMechanic : MonoBehaviour
     public GameObject PlayerBody_Idle;
     public GameObject PlayerBody_Grabbing;
 
+    public Rigidbody playerRigidbody;
 
     void Start()
     {
@@ -38,6 +39,10 @@ public class PlayerGrabMechanic : MonoBehaviour
 
     void GrabbingEnemy()
     {
+
+        playerRigidbody.constraints = RigidbodyConstraints.FreezePositionZ | RigidbodyConstraints.FreezePositionX
+                                      ;
+
 
         P_isGrabbing = true;
         Debug.Log("Enemy has been grabbed!");
