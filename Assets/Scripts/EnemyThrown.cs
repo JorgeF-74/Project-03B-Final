@@ -26,7 +26,6 @@ public class EnemyThrown : MonoBehaviour
 
     void OnTriggerEnter(Collider other)                                                     ////////////////////////////////////////////////////////////////////////////////
     {
-<<<<<<< HEAD
 
         if (other.CompareTag("GrabBox"))
 
@@ -42,27 +41,6 @@ public class EnemyThrown : MonoBehaviour
         EnemyBody_Grabbed.SetActive(true);
 
 
-=======
-        Debug.Log("Enemy is Grabbed");
-
-
-        EnemyBody_Idle.SetActive(false);
-        EnemyBody_Grabbed.SetActive(true);
-
-        GameObject player;
-
-
-         void Start()
-        {
-
-        }
-        void FixedUpdate()
-        {
-            //IsGettingThrown();
-        }
-
-
->>>>>>> main
         void IsGettingThrown()
         {
             Debug.Log("Enemy is Thrown");
