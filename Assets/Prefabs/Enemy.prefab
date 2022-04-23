@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6722648804404045196}
   m_Layer: 0
   m_Name: Enemy Hitbox
-  m_TagString: Enemy
+  m_TagString: EnemyGrabBox
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -56,6 +56,7 @@ GameObject:
   - component: {fileID: 6722648804680448376}
   - component: {fileID: 6722648804680448378}
   - component: {fileID: 5810492229812390139}
+  - component: {fileID: 1121821744}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Enemy
@@ -108,6 +109,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EnemyBody_Idle: {fileID: 23450232187528246}
   EnemyBody_Grabbed: {fileID: 1107455439902496135}
+  EnemyBody_Thrown: {fileID: 2701801508708677949}
   player: {fileID: 0}
 --- !u!54 &5810492229812390139
 Rigidbody:
@@ -125,6 +127,25 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
+--- !u!114 &1121821744
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6722648804680448377}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c054cb077d55168419e175ce1c66948c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  E_isGrabbed: 0
+  enemy: {fileID: 6722648804680448377}
+  tempParent: {fileID: 0}
+  EnemyCollider: {fileID: 6722648804404045194}
+  player: {fileID: 0}
+  E_ThrownPosition: {fileID: 0}
+  E_CurrentPosition: {fileID: 6722648804680448379}
 --- !u!1001 &701126918
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -13,24 +13,38 @@ public class PlayerGrabMechanic : MonoBehaviour
 
     public GameObject PlayerBody_Idle;
     public GameObject PlayerBody_Grabbing;
+    public GameObject PlayerBody_Throwing;
 
     public Rigidbody playerRigidbody;
 
+    public Transform GrabBox_Collider;
+
+    RigidbodyConstraints originalConstraints;
+
+    private void Awake()
+    {
+        originalConstraints = playerRigidbody.constraints;
+    }
     void Start()
     {
-        enemy = GameObject.FindWithTag("Enemy");
+        enemy = GameObject.FindWithTag("EnemyGrabBox");
+
+        Collider collider = GrabBox_Collider.GetChild(0).GetComponent<Collider>();
     }
 
     
     void Update()
     {
-        
+        if (Input.GetKeyDown(KeyCode.J) && P_isGrabbing == true)
+        {
+            ThrowingEnemy();
+        }
     }
 
     void OnTriggerEnter(Collider other)                                                     ////////////////////////////////////////////////////////////////////////////////
     {
 
-        if (other.CompareTag("Enemy"))
+        if (other.CompareTag("EnemyGrabBox") && P_isGrabbing == false)
 
         if (enemy)
 
@@ -40,19 +54,38 @@ public class PlayerGrabMechanic : MonoBehaviour
     void GrabbingEnemy()
     {
 
-        playerRigidbody.constraints = RigidbodyConstraints.FreezePositionZ | RigidbodyConstraints.FreezePositionX
-                                      ;
-
+        playerRigidbody.constraints = RigidbodyConstraints.FreezePositionZ | RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezeRotationX
+                                      | RigidbodyConstraints.FreezeRotationY | RigidbodyConstraints.FreezeRotationZ;
+        
 
         P_isGrabbing = true;
         Debug.Log("Enemy has been grabbed!");
         PlayerBody_Idle.SetActive(false);
         PlayerBody_Grabbing.SetActive(true);
 
-        Debug.Log("Enemy has been grabbed!");
+    }
 
+    IEnumerator ThrowingEnemy()
+    {
+        P_isGrabbing = false;
+        PlayerBody_Grabbing.SetActive(false);
+        PlayerBody_Throwing.SetActive(true);
 
-        Debug.Log("Enemy has been grabbed!");
+        yield return new WaitForSeconds(1);
+
+        ThrowingRecovery();
+    }
+
+    void ThrowingRecovery()                                         // Player gets back up from throwing the enemy.
+    {
+        
+    }
+
+    void IdleStance()
+    {
+        PlayerBody_Throwing.SetActive(false);
+        PlayerBody_Idle.SetActive(true);
+        playerRigidbody.constraints = originalConstraints;
     }
 
 }
