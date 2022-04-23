@@ -125,6 +125,7 @@ NavMeshSettings:
   m_NavMeshData: {fileID: 0}
 --- !u!1001 &458832470
 PrefabInstance:
+<<<<<<< HEAD
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
@@ -186,16 +187,30 @@ PrefabInstance:
   m_SourcePrefab: {fileID: 100100000, guid: 0f4fa1ba382cdd440ac194f37eb7b51e, type: 3}
 --- !u!1001 &537129556
 PrefabInstance:
+=======
+>>>>>>> main
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+<<<<<<< HEAD
     - target: {fileID: 6722648804680448377, guid: 12bf8bb402eecf842960a3cc9f6b4415, type: 3}
       propertyPath: m_Name
       value: Enemy (2)
       objectReference: {fileID: 0}
     - target: {fileID: 6722648804680448379, guid: 12bf8bb402eecf842960a3cc9f6b4415, type: 3}
+=======
+    - target: {fileID: 889869208, guid: 0f4fa1ba382cdd440ac194f37eb7b51e, type: 3}
+      propertyPath: PlayerBody_Idle
+      value: 
+      objectReference: {fileID: 625096142}
+    - target: {fileID: 889869208, guid: 0f4fa1ba382cdd440ac194f37eb7b51e, type: 3}
+      propertyPath: PlayerBody_Grabbing
+      value: 
+      objectReference: {fileID: 1480260545}
+    - target: {fileID: 6163713620403316491, guid: 0f4fa1ba382cdd440ac194f37eb7b51e, type: 3}
+>>>>>>> main
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
@@ -205,7 +220,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6722648804680448379, guid: 12bf8bb402eecf842960a3cc9f6b4415, type: 3}
       propertyPath: m_LocalPosition.y
+<<<<<<< HEAD
       value: 0.5
+=======
+      value: 2.463
+>>>>>>> main
       objectReference: {fileID: 0}
     - target: {fileID: 6722648804680448379, guid: 12bf8bb402eecf842960a3cc9f6b4415, type: 3}
       propertyPath: m_LocalPosition.z
@@ -240,7 +259,21 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+<<<<<<< HEAD
   m_SourcePrefab: {fileID: 100100000, guid: 12bf8bb402eecf842960a3cc9f6b4415, type: 3}
+=======
+  m_SourcePrefab: {fileID: 100100000, guid: 0f4fa1ba382cdd440ac194f37eb7b51e, type: 3}
+--- !u!1 &625096142 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5463773388463326379, guid: 0f4fa1ba382cdd440ac194f37eb7b51e, type: 3}
+  m_PrefabInstance: {fileID: 458832470}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &649891371 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1107455439902496135, guid: 12bf8bb402eecf842960a3cc9f6b4415, type: 3}
+  m_PrefabInstance: {fileID: 6722648805323491033}
+  m_PrefabAsset: {fileID: 0}
+>>>>>>> main
 --- !u!1 &952627504
 GameObject:
   m_ObjectHideFlags: 0
@@ -481,6 +514,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1480260545 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8534368777737767576, guid: 0f4fa1ba382cdd440ac194f37eb7b51e, type: 3}
+  m_PrefabInstance: {fileID: 458832470}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1814708380
 GameObject:
   m_ObjectHideFlags: 0
@@ -526,6 +564,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1046788586}
+    - target: {fileID: 6722648804680448378, guid: 12bf8bb402eecf842960a3cc9f6b4415, type: 3}
+      propertyPath: EnemyBody_Grabbed
+      value: 
+      objectReference: {fileID: 649891371}
     - target: {fileID: 6722648804680448379, guid: 12bf8bb402eecf842960a3cc9f6b4415, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -536,7 +578,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6722648804680448379, guid: 12bf8bb402eecf842960a3cc9f6b4415, type: 3}
       propertyPath: m_LocalPosition.y
+<<<<<<< HEAD
       value: 0.74
+=======
+      value: 2.463
+>>>>>>> main
       objectReference: {fileID: 0}
     - target: {fileID: 6722648804680448379, guid: 12bf8bb402eecf842960a3cc9f6b4415, type: 3}
       propertyPath: m_LocalPosition.z
