@@ -24,6 +24,13 @@ public class EnemyThrown : MonoBehaviour
         //IsGettingThrown();
     }
 
+    void OnTriggerEnter(Collider other)                                                     ////////////////////////////////////////////////////////////////////////////////
+    {
+
+        if (other.CompareTag("GrabBox"))
+
+                IsGettingGrabbed();
+    }
 
     void IsGettingGrabbed()
     {
@@ -32,18 +39,6 @@ public class EnemyThrown : MonoBehaviour
 
         EnemyBody_Idle.SetActive(false);
         EnemyBody_Grabbed.SetActive(true);
-
-        GameObject player;
-
-
-         void Start()
-        {
-
-        }
-        void FixedUpdate()
-        {
-            //IsGettingThrown();
-        }
 
 
         void IsGettingThrown()

@@ -106,7 +106,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   EnemyBody_Idle: {fileID: 23450232187528246}
-  EnemyBody_Grabbed: {fileID: 0}
+  EnemyBody_Grabbed: {fileID: 1107455439902496135}
   player: {fileID: 0}
 --- !u!54 &5810492229812390139
 Rigidbody:
@@ -705,6 +705,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 93991b5703569ed4eac8e44bc350b1ca, type: 3}
+--- !u!1 &1107455439902496135 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1107455439470857345, guid: 93991b5703569ed4eac8e44bc350b1ca, type: 3}
+  m_PrefabInstance: {fileID: 701126918}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &3339150542403959621 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3339150542784963139, guid: 93991b5703569ed4eac8e44bc350b1ca, type: 3}
