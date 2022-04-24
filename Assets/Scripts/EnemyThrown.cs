@@ -12,6 +12,7 @@ public class EnemyThrown : MonoBehaviour
     public GameObject EnemyBody_Idle;
     public GameObject EnemyBody_Grabbed;
     public GameObject EnemyBody_Thrown;
+    public GameObject EnemyBody_LyingDown;
 
     public GameObject player;
     
@@ -37,6 +38,10 @@ public class EnemyThrown : MonoBehaviour
         if (other.CompareTag("GrabBox"))
 
                 IsGettingGrabbed();
+
+        if (other.CompareTag("Ground") && E_Thrown == true)
+                
+                ThrownToGround();
 
     }
 
@@ -68,7 +73,8 @@ public class EnemyThrown : MonoBehaviour
 
     void ThrownToGround()
     {
-
+        EnemyBody_Thrown.SetActive(false);
+        EnemyBody_LyingDown.SetActive(true);
     }
 
     void GettingUp()
