@@ -9,7 +9,7 @@ public class ThrowScriptTemp : MonoBehaviour
     /// </summary>
 
 
-    float throwForce = 600;
+    float throwForce = 500;
     Vector3 objectPos;
     float distance;
 

@@ -37,7 +37,7 @@ public class PlayerGrabMechanic : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.J) && P_isGrabbing == true)
         {
-            ThrowingEnemy();
+            StartCoroutine(ThrowingEnemy());
         }
     }
 
@@ -78,11 +78,13 @@ public class PlayerGrabMechanic : MonoBehaviour
 
     void ThrowingRecovery()                                         // Player gets back up from throwing the enemy.
     {
-        
+        IdleStance();
     }
 
     void IdleStance()
     {
+
+        Debug.Log("Player is back at idle stance");
         PlayerBody_Throwing.SetActive(false);
         PlayerBody_Idle.SetActive(true);
         playerRigidbody.constraints = originalConstraints;
