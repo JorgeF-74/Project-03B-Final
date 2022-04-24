@@ -7,7 +7,7 @@ public class EnemyThrown : MonoBehaviour
     float E_rotation = 30;
 
     bool E_Grabbed = false;
-    bool E_Thrown = false;
+    public bool E_Thrown = false;                           // get rid of 'public' if other enemies start acting up.
 
     public GameObject EnemyBody_Idle;
     public GameObject EnemyBody_Grabbed;
@@ -15,7 +15,8 @@ public class EnemyThrown : MonoBehaviour
     public GameObject EnemyBody_LyingDown;
 
     public GameObject player;
-    
+
+    [SerializeField] Transform Player_Transform;
 
 
 
@@ -53,6 +54,8 @@ public class EnemyThrown : MonoBehaviour
 
         EnemyBody_Idle.SetActive(false);
         EnemyBody_Grabbed.SetActive(true);
+
+        transform.LookAt(Player_Transform);
 
     }
 
