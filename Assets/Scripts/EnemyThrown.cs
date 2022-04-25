@@ -57,6 +57,8 @@ public class EnemyThrown : MonoBehaviour
 
         transform.LookAt(Player_Transform);
 
+
+
     }
 
     void IsGettingThrown()

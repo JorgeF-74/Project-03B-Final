@@ -42,8 +42,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.2631971, y: 4.978314, z: 2.1438906}
-  m_Center: {x: 0.030368688, y: 2.3839533, z: 0.18727395}
+  m_Size: {x: 1.3361984, y: 4.978314, z: 2.1438906}
+  m_Center: {x: -0.006131954, y: 2.3839533, z: 0.18727392}
 --- !u!1 &6722648804680448377
 GameObject:
   m_ObjectHideFlags: 0
@@ -95,8 +95,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.1965119, y: 4.9449725, z: 2.0716517}
-  m_Center: {x: 0.030368451, y: 2.3672826, z: 0.18449506}
+  m_Size: {x: 1.26343, y: 4.9449725, z: 2.0716546}
+  m_Center: {x: -0.003090348, y: 2.3672826, z: 0.18449503}
 --- !u!114 &6722648804680448378
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -151,6 +151,7 @@ MonoBehaviour:
   player: {fileID: 0}
   E_ThrownPosition: {fileID: 0}
   E_CurrentPosition: {fileID: 6722648804680448379}
+  E_GrabbedPosition: {fileID: 0}
 --- !u!114 &5776595608171931741
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -163,6 +164,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df942357e1543ee4db38a8dab08f86b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  E_KnockedBack: 0
   EnemySelf: {fileID: 6722648804680448377}
 --- !u!1001 &701126918
 PrefabInstance:

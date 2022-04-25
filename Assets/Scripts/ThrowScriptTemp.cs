@@ -25,6 +25,7 @@ public class ThrowScriptTemp : MonoBehaviour
 
     [SerializeField] Transform E_ThrownPosition;
     [SerializeField] Transform E_CurrentPosition;
+    [SerializeField] Transform E_GrabbedPosition;
 
 
     void Start()
@@ -45,11 +46,16 @@ public class ThrowScriptTemp : MonoBehaviour
 
         if(E_isGrabbed == true)
         {
+            /*
             enemy.GetComponent<Rigidbody>().velocity = Vector3.zero;
             enemy.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
             enemy.transform.SetParent(tempParent.transform);
+            */
 
-            
+           
+
+
+
         }
             if (Input.GetKeyDown(KeyCode.J) && E_isGrabbed == true)
             {
@@ -78,6 +84,8 @@ public class ThrowScriptTemp : MonoBehaviour
     {
 
         Debug.Log("Enemy has been grabbed");
+        E_CurrentPosition.position = E_GrabbedPosition.position;
+
 
         E_isGrabbed = true;
         enemy.GetComponent<Rigidbody>().useGravity = false;
