@@ -18,7 +18,8 @@ public class EnemyKnockedBack : MonoBehaviour
     [SerializeField] GameObject EnemyBody_Idle;
     [SerializeField] GameObject EnemyBody_KnockedBack;
     [SerializeField] GameObject EnemyBody_LyingDown;
-   // [SerializeField] GameObject EnemyBody_Thrown;
+    [SerializeField] GameObject EnemyBody_GettingUp;
+    // [SerializeField] GameObject EnemyBody_Thrown;
 
 
 
@@ -54,7 +55,7 @@ public class EnemyKnockedBack : MonoBehaviour
 
         if (other.CompareTag("Ground") && EnemySelf.GetComponent<EnemyKnockedBack>().E_KnockedBack == true)
         {
-            Enemy_KnockedDown();
+            StartCoroutine(Enemy_KnockedDown());
         }
 
 
@@ -71,11 +72,27 @@ public class EnemyKnockedBack : MonoBehaviour
 
     }
     
-    void Enemy_KnockedDown()
+    IEnumerator Enemy_KnockedDown()
     {
         E_KnockedBack = false;
         EnemyBody_KnockedBack.SetActive(false);
         EnemyBody_LyingDown.SetActive(true);
+
+        yield return new WaitForSeconds(1);
+
+        StartCoroutine(Enemy_GettingUp());
+    }
+
+    IEnumerator Enemy_GettingUp()
+    {
+        EnemyBody_LyingDown.SetActive(false);
+        EnemyBody_GettingUp.SetActive(true);
+
+
+        yield return new WaitForSeconds(1);
+
+        EnemyBody_GettingUp.SetActive(false);
+        EnemyBody_Idle.SetActive(true);
     }
 
 }

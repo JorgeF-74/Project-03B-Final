@@ -14,6 +14,7 @@ public class EnemyThrown : MonoBehaviour
     public GameObject EnemyBody_Grabbed;
     public GameObject EnemyBody_Thrown;
     public GameObject EnemyBody_LyingDown;
+    public GameObject EnemyBody_GettingUp;
 
     public GameObject player;
 
@@ -43,7 +44,7 @@ public class EnemyThrown : MonoBehaviour
 
         if (other.CompareTag("Ground") && E_Thrown == true)
                 
-                ThrownToGround();
+                StartCoroutine(ThrownToGround());
 
 
        
@@ -79,14 +80,29 @@ public class EnemyThrown : MonoBehaviour
         
     }
 
-    void ThrownToGround()
+    IEnumerator ThrownToGround()
     {
+        E_Thrown = false;
         EnemyBody_Thrown.SetActive(false);
         EnemyBody_LyingDown.SetActive(true);
+
+        yield return new WaitForSeconds(1);
+
+        StartCoroutine(GettingUp());
+
     }
 
-    void GettingUp()
-    {
+    IEnumerator GettingUp()
+    { 
+
+        EnemyBody_LyingDown.SetActive(false);
+        EnemyBody_GettingUp.SetActive(true);
+
+
+        yield return new WaitForSeconds(1);
+
+        EnemyBody_GettingUp.SetActive(false);
+        EnemyBody_Idle.SetActive(true);
 
     }
 }
