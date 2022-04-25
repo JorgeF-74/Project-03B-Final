@@ -14,20 +14,34 @@ public class EnemyKnockedBack : MonoBehaviour
     public bool E_KnockedBack = false;
 
     [SerializeField] GameObject EnemySelf;
-    
+
+    [SerializeField] GameObject EnemyBody_Idle;
+    [SerializeField] GameObject EnemyBody_KnockedBack;
+    [SerializeField] GameObject EnemyBody_LyingDown;
+   // [SerializeField] GameObject EnemyBody_Thrown;
+
+
 
     private void OnTriggerEnter(Collider other)
+
+        // Code that Knocks this enemy of their feet if the ther enemwas was Thrown into this Enemy
     {
-        if (other.CompareTag("Enemy") && other.GetComponent<EnemyThrown>().E_Thrown == true) 
+        if (other.CompareTag("Enemy") && other.GetComponent<EnemyThrown>().E_Thrown == true
+            && other.GetComponent<EnemyKnockedBack>().E_KnockedBack == false 
+            && EnemySelf.GetComponent<EnemyKnockedBack>().E_KnockedBack == false) 
         {
 
             transform.position = new Vector3(transform.position.x, transform.position.y + 1f, transform.position.z);
 
             EnemySelf.GetComponent<Rigidbody>().AddForce(other.transform.forward * KnockForce);
+
             Enemy_KnockedOff();
         }
 
-        if (other.CompareTag("Enemy") && other.GetComponent<EnemyKnockedBack>().E_KnockedBack == true)
+        // Code the Knocks this enemy off their feet if the other enemy was Knocked Into this Enemy
+
+        if (other.CompareTag("Enemy") && other.GetComponent<EnemyKnockedBack>().E_KnockedBack == true
+                && other.GetComponent<EnemyThrown>().E_Thrown == false)
         {
             transform.position = new Vector3(transform.position.x, transform.position.y + 1f, transform.position.z);
 
@@ -36,13 +50,32 @@ public class EnemyKnockedBack : MonoBehaviour
         }
 
 
+        // Code the lies this enemy onto the floor if they were knocked off
+
+        if (other.CompareTag("Ground") && EnemySelf.GetComponent<EnemyKnockedBack>().E_KnockedBack == true)
+        {
+            Enemy_KnockedDown();
+        }
+
+
     }
 
-    void Enemy_KnockedOff()
+    private void Enemy_KnockedOff()
     {
         Debug.Log("2nd enemy has been knocked off feet!");
-        E_KnockedBack = true;
         
+        E_KnockedBack = true;
+
+        EnemyBody_Idle.SetActive(false);
+        EnemyBody_KnockedBack.SetActive(true);
+
+    }
+    
+    void Enemy_KnockedDown()
+    {
+        E_KnockedBack = false;
+        EnemyBody_KnockedBack.SetActive(false);
+        EnemyBody_LyingDown.SetActive(true);
     }
 
 }

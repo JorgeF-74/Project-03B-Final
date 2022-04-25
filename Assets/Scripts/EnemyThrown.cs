@@ -8,6 +8,7 @@ public class EnemyThrown : MonoBehaviour
 
     bool E_Grabbed = false;
     public bool E_Thrown = false;                           // get rid of 'public' if other enemies start acting up.
+    //public bool 
 
     public GameObject EnemyBody_Idle;
     public GameObject EnemyBody_Grabbed;
@@ -44,6 +45,8 @@ public class EnemyThrown : MonoBehaviour
                 
                 ThrownToGround();
 
+
+       
     }
 
     void IsGettingGrabbed()
