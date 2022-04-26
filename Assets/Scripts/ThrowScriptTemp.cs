@@ -28,11 +28,7 @@ public class ThrowScriptTemp : MonoBehaviour
     [SerializeField] Transform E_GrabbedPosition;
 
 
-    void Start()
-    {
-       
-
-    }
+    
 
     
     void Update()

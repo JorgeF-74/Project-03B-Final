@@ -21,7 +21,21 @@ public class EnemyKnockedBack : MonoBehaviour
     [SerializeField] GameObject EnemyBody_GettingUp;
     // [SerializeField] GameObject EnemyBody_Thrown;
 
+    [SerializeField] AudioSource ImpactBody_Source;
+    [SerializeField] AudioClip ImpactBody_Clip;
 
+    [SerializeField] AudioSource ImpactFloor_K_Source;
+    [SerializeField] AudioClip ImpactFloor_K_Clip;
+
+  
+
+
+    private void Awake()
+    {
+        ImpactBody_Source = GetComponent<AudioSource>();
+        ImpactFloor_K_Source = GetComponent<AudioSource>();
+        
+    }
 
     private void OnTriggerEnter(Collider other)
 
@@ -70,6 +84,9 @@ public class EnemyKnockedBack : MonoBehaviour
         EnemyBody_Idle.SetActive(false);
         EnemyBody_KnockedBack.SetActive(true);
 
+        ImpactBody_Source.clip = ImpactBody_Clip;
+        ImpactBody_Source.Play();
+
     }
     
     IEnumerator Enemy_KnockedDown()
@@ -77,6 +94,9 @@ public class EnemyKnockedBack : MonoBehaviour
         E_KnockedBack = false;
         EnemyBody_KnockedBack.SetActive(false);
         EnemyBody_LyingDown.SetActive(true);
+
+        ImpactFloor_K_Source.clip = ImpactFloor_K_Clip;
+        ImpactFloor_K_Source.Play();
 
         yield return new WaitForSeconds(1);
 

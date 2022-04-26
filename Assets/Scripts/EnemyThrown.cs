@@ -20,12 +20,16 @@ public class EnemyThrown : MonoBehaviour
 
     [SerializeField] Transform Player_Transform;
 
+    [SerializeField] AudioSource ImpactFloor_T_Source;
+    [SerializeField] AudioClip ImpactFloor_T_Clip;
 
 
-    private void Start()
+
+    private void Awake()
     {
-
+        ImpactFloor_T_Source = GetComponent<AudioSource>();
     }
+
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.J) && E_Grabbed == true)
@@ -85,6 +89,9 @@ public class EnemyThrown : MonoBehaviour
         E_Thrown = false;
         EnemyBody_Thrown.SetActive(false);
         EnemyBody_LyingDown.SetActive(true);
+
+        ImpactFloor_T_Source.clip = ImpactFloor_T_Clip;
+        ImpactFloor_T_Source.Play();
 
         yield return new WaitForSeconds(1);
 
