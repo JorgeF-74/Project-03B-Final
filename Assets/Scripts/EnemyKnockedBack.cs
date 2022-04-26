@@ -30,7 +30,7 @@ public class EnemyKnockedBack : MonoBehaviour
   
 
 
-    private void Awake()
+    void Awake()
     {
         ImpactBody_Source = GetComponent<AudioSource>();
         ImpactFloor_K_Source = GetComponent<AudioSource>();
@@ -75,7 +75,8 @@ public class EnemyKnockedBack : MonoBehaviour
 
     }
 
-    private void Enemy_KnockedOff()
+    //private 
+        void Enemy_KnockedOff()
     {
         Debug.Log("2nd enemy has been knocked off feet!");
         

@@ -11,7 +11,7 @@ public class EnemyHealth : MonoBehaviour
 
     //
 
-    [SerializeField] Image _healthBar;
+    public Image _healthBar;
     float CurrentHealth;
     float Maxhealth = 100f;                                                             //This will be the max health value the player can achieve
     //PlayerHealth _player;
@@ -25,7 +25,7 @@ public class EnemyHealth : MonoBehaviour
     // Update is called once per frame
     void Update()                                                                   // This Function updates the image of the healthbar. The bright red bar will adjust itself
     {                                                                                //  according to the players health value
-        CurrentHealth = Health;
+        CurrentHealth = this.Health;
         _healthBar.fillAmount = CurrentHealth / Maxhealth;
     }
     public void EnemyDamage()

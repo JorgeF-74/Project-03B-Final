@@ -47,9 +47,12 @@ public class EnemyThrown : MonoBehaviour
                 IsGettingGrabbed();
 
         if (other.CompareTag("Ground") && E_Thrown == true)
-                
-                StartCoroutine(ThrownToGround());
+        {
 
+            StartCoroutine(ThrownToGround());
+            ImpactFloor_T_Source.clip = ImpactFloor_T_Clip;
+            ImpactFloor_T_Source.Play();
+        }
 
        
     }
@@ -90,8 +93,7 @@ public class EnemyThrown : MonoBehaviour
         EnemyBody_Thrown.SetActive(false);
         EnemyBody_LyingDown.SetActive(true);
 
-        ImpactFloor_T_Source.clip = ImpactFloor_T_Clip;
-        ImpactFloor_T_Source.Play();
+    
 
         yield return new WaitForSeconds(1);
 
